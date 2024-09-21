@@ -1,0 +1,60 @@
+services:
+  build-agent-a:
+    image: lscr.io/linuxserver/build-agent:latest
+    privileged: true
+    container_name: build-agent-a
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - 'PUBLIC_KEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLFJD4UrHyOuaflnEirPo4xmY6vS6OjZJfczcXZQLMW65A8z+E8aN9SpY7OzqhMZY27ZkGGAbwvKOz6oZXNxg3bmEiwa/AUbE1oOZbHAxloFzXIYsyyhr/zh0i/LrhTL7J7tdP8YDnng9qOTinq4hmvcJF/AHNz6htnJlfM0C0dD5AIPSXZHy+X26CneU9usazlL9yh15KRxYOZOFMUnTQVPQUMfY+ROAhK0Dga3mvJ1etmDey6D7TI97HFL+MAm0bSWxc6gqmNIuAM+3aq0MT2cvrFAVt8P+WZe3IfejrC9sJ42CNGKwREoN5TxU1lCx2b5/IBUMGMjzdXb6Luh31'
+    volumes:
+      - /home/lsio/compose/build-agent/build-agent-a:/config
+    ports:
+      - 2221:2222
+    restart: unless-stopped
+
+  build-agent-b:
+    image: lscr.io/linuxserver/build-agent:latest
+    privileged: true
+    container_name: build-agent-b
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - 'PUBLIC_KEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLFJD4UrHyOuaflnEirPo4xmY6vS6OjZJfczcXZQLMW65A8z+E8aN9SpY7OzqhMZY27ZkGGAbwvKOz6oZXNxg3bmEiwa/AUbE1oOZbHAxloFzXIYsyyhr/zh0i/LrhTL7J7tdP8YDnng9qOTinq4hmvcJF/AHNz6htnJlfM0C0dD5AIPSXZHy+X26CneU9usazlL9yh15KRxYOZOFMUnTQVPQUMfY+ROAhK0Dga3mvJ1etmDey6D7TI97HFL+MAm0bSWxc6gqmNIuAM+3aq0MT2cvrFAVt8P+WZe3IfejrC9sJ42CNGKwREoN5TxU1lCx2b5/IBUMGMjzdXb6Luh31'
+    volumes:
+      - /home/lsio/compose/build-agent/build-agent-b:/config
+    ports:
+      - 2222:2222
+    restart: unless-stopped
+
+  build-agent-c:
+    image: lscr.io/linuxserver/build-agent:latest
+    privileged: true
+    container_name: build-agent-c
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - 'PUBLIC_KEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLFJD4UrHyOuaflnEirPo4xmY6vS6OjZJfczcXZQLMW65A8z+E8aN9SpY7OzqhMZY27ZkGGAbwvKOz6oZXNxg3bmEiwa/AUbE1oOZbHAxloFzXIYsyyhr/zh0i/LrhTL7J7tdP8YDnng9qOTinq4hmvcJF/AHNz6htnJlfM0C0dD5AIPSXZHy+X26CneU9usazlL9yh15KRxYOZOFMUnTQVPQUMfY+ROAhK0Dga3mvJ1etmDey6D7TI97HFL+MAm0bSWxc6gqmNIuAM+3aq0MT2cvrFAVt8P+WZe3IfejrC9sJ42CNGKwREoN5TxU1lCx2b5/IBUMGMjzdXb6Luh31'
+    volumes:
+      - /home/lsio/compose/build-agent/build-agent-c:/config
+    ports:
+      - 2223:2222
+    restart: unless-stopped
+
+  build-agent-d:
+    image: lscr.io/linuxserver/build-agent:latest
+    privileged: true
+    container_name: build-agent-d
+    environment:
+      - TZ=${TZ}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - 'PUBLIC_KEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLFJD4UrHyOuaflnEirPo4xmY6vS6OjZJfczcXZQLMW65A8z+E8aN9SpY7OzqhMZY27ZkGGAbwvKOz6oZXNxg3bmEiwa/AUbE1oOZbHAxloFzXIYsyyhr/zh0i/LrhTL7J7tdP8YDnng9qOTinq4hmvcJF/AHNz6htnJlfM0C0dD5AIPSXZHy+X26CneU9usazlL9yh15KRxYOZOFMUnTQVPQUMfY+ROAhK0Dga3mvJ1etmDey6D7TI97HFL+MAm0bSWxc6gqmNIuAM+3aq0MT2cvrFAVt8P+WZe3IfejrC9sJ42CNGKwREoN5TxU1lCx2b5/IBUMGMjzdXb6Luh31'
+    volumes:
+      - /home/lsio/compose/build-agent/build-agent-d:/config
+    ports:
+      - 2224:2222
+    restart: unless-stopped

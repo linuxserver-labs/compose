@@ -1,1 +1,1 @@
-# compose
+# Compose projects for various LSIO-Labs services
